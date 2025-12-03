@@ -3,20 +3,14 @@ services:
     name: tumbl-f1-backend
     env: node
     plan: free
-    buildCommand: |
-      cd backend && npm install
-      npx tsc --project tsconfig.json
-    startCommand: node backend/dist/index.js
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npx tsx server/index.ts
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_i1W6yPcgfQdH@ep-sweet-bonus-adbsl1os-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
     healthCheckPath: /api/health
     autoDeploy: true
-
-databases:
-  - name: tumbl-f1-db
-    plan: free
-    databaseName: tumbl_f1
-    user: tumbl_f1_user
