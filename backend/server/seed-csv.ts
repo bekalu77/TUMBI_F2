@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { users, companyTypes, companies, itemCategories, items, locations, rfq, units } from "@shared/schema";
+import { users, companyTypes, companies, itemCategories, items, locations, rfq, units } from "../shared/schema";
 import fs from "fs";
 import Papa from "papaparse";
 import { randomUUID } from "crypto";

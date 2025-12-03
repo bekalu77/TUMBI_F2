@@ -1,5 +1,5 @@
 import { db } from '../db';
-import { items } from '@shared/schema';
+import { items } from '../shared/schema';
 import { eq } from 'drizzle-orm';
 
 async function fixImageUrls() {

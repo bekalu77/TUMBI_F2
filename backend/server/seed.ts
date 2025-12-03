@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { users, itemCategories, companies, items, companyTypes } from "@shared/schema"; // Import companyTypes
+import { users, itemCategories, companies, items, companyTypes } from "../shared/schema"; // Import companyTypes
 import data from "./data.json";
 import { eq, inArray } from "drizzle-orm"; // Import eq and inArray
 

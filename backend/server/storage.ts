@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Company, type InsertCompany, type Item, type InsertItem, type Job, type InsertJob, users, companies, items, itemCategories, type ItemCategory, type InsertItemCategory, locations, type Location, type CompanyType, type ItemWithRelations, jobs, companyTypes } from "@shared/schema";
+import { type User, type InsertUser, type Company, type InsertCompany, type Item, type InsertItem, type Job, type InsertJob, users, companies, items, itemCategories, type ItemCategory, type InsertItemCategory, locations, type Location, type CompanyType, type ItemWithRelations, jobs, companyTypes } from "../shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "./db";
 import { eq, or, like, sql } from "drizzle-orm";
