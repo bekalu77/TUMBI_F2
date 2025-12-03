@@ -2,9 +2,9 @@
   "name": "tumbi-f1-backend",
   "type": "module",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "tsx server/index.ts",
     "dev": "tsx server/index.ts",
-    "build": "tsc",
+    "build": "echo 'No build needed for tsx'",
     "migrate:uploads": "tsx server/scripts/migrate-uploads.ts",
     "migrate:data": "tsx server/scripts/migrate-data.ts",
     "migrate:force": "tsx server/scripts/run-migrations.ts"
@@ -24,7 +24,9 @@
     "papaparse": "^5.5.3",
     "pg": "^8.16.3",
     "postgres": "^3.4.7",
-    "zod": "^4.1.12"
+    "zod": "^4.1.12",
+    "axios": "^1.13.2",
+    "form-data": "^4.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.5",
@@ -33,6 +35,8 @@
     "@types/multer": "^2.0.0",
     "@types/node": "^24.10.1",
     "@types/pg": "^8.15.6",
+    "@types/papaparse": "^5.3.14",
+    "@types/form-data": "^2.2.1",
     "typescript": "^5.2.2",
     "tsx": "^4.21.0"
   },
