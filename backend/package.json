@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "start": "tsx server/production.ts",
-    "dev": "tsx server/index.ts"
+    "dev": "tsx server/index.ts",
     "build": "echo 'No build needed for tsx'",
     "migrate:uploads": "tsx server/scripts/migrate-uploads.ts",
     "migrate:data": "tsx server/scripts/migrate-data.ts",
