@@ -12,4 +12,12 @@
       "dest": "server/index.ts"
     }
   ]
+  {
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
 }
