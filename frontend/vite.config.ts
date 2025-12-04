@@ -3,17 +3,24 @@ import { default as react } from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  plugins: [
-    react(),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          ui: ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
+        },
+      },
+    },
   },
   server: {
     fs: {
@@ -21,10 +28,10 @@ export default defineConfig({
       deny: ["**/.*"],
     },
     proxy: {
-      '/api': {
-        target: 'http://localhost:5010', // Forward /api requests to the Express backend
+      "/api": {
+        target: process.env.VITE_API_URL || "http://localhost:5010",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''), // Remove the /api prefix
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
