@@ -8,7 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://*.vercel.app'],
+  origin: [
+    'http://localhost:5173',
+    'https://tumbi-f2.vercel.app',
+    'https://tumbi-f2-*.vercel.app'
+  ],
   credentials: true
 }));
 
