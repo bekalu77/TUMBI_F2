@@ -3,16 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        // Fix for PostCSS plugin warning
-        plugins: [
-          ["babel-plugin-react-compiler", {}],
-        ],
-      },
-    }),
-  ],
+  plugins: [react()], // Remove babel plugin causing PostCSS warning
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -44,8 +35,15 @@ export default defineConfig({
       },
     },
   },
-  // Optimize CSS processing
   css: {
     devSourcemap: false,
+  },
+  // Add polyfills for Node.js modules
+  optimizeDeps: {
+    include: ['gray-matter', 'buffer'],
+  },
+  define: {
+    'process.env': {},
+    global: 'globalThis',
   },
 });
