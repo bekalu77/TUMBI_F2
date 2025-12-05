@@ -34,6 +34,7 @@
     "cmdk": "^1.1.1",
     "d3-shape": "^3.2.0",
     "date-fns": "^4.1.0",
+    "gray-matter": "^4.0.3",
     "lexical": "^0.38.2",
     "lucide-react": "^0.554.0",
     "marked": "^12.0.0",
